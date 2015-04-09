@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itstudio.domain">
+<class name="DeviceBill" table="device_deviceBill">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="name" type="string" column="name"/>
+	<property name="description"  type="string" column="description"/>
+	<property name="applyDate" type="timestamp" column="applyDate"/>
+	<property name="remark" type="string" column="remark"/>
+	<property name="position" type="string" column="position"/>
+	<property name="fee" type="string" column="fee"/>
+	<property name="state" type="integer" column="state"/>
+	<many-to-one name="user" class="User" column="userId"></many-to-one>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<div id="header">
+			<h1><a href="#">管理系统</a></h1>		
+		</div>
+		
+		<div id="search">
+			<input type="text" placeholder="请输入搜索内容..." /><button type="submit" class="tip-right" title="Search"><i class="icon-search icon-white"></i></button>
+		</div>
+		<div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav btn-group">
+                <li class="btn btn-inverse dropdown" id="personInfo"><a title="" href="#" data-toggle="dropdown" data-target="#personInfo" class="dropdown-toggle"><i class="icon icon-user"></i> <span class="text">${user.name }</span><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="sAdd" title="" href="user_changePasswordUI.action?id=${user.id }">重置密码</a></li>
+                        <li><a class="sOutbox" title="" href="user_show.action?id=${user.id }">查看个人资料</a></li>
+                        <li><a class="sInbox" title="" href="user_editInfoUI.action?id=${user.id }">修改个人资料</a></li>
+
+                    </ul>
+                </li>
+                <li class="btn btn-inverse dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">消息</span>${applicationScope.waitTaskCount} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><s:a class="sAdd" title="" action="deal_list">新消息</s:a></li>
+                    </ul>
+                </li>
+                <li class="btn btn-inverse"><s:a title="" action="user_logout"><i class="icon icon-share-alt"></i> <span class="text">注销</span></s:a></li>
+            </ul>
+        </div>

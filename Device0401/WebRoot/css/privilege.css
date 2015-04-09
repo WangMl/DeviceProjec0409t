@@ -1,0 +1,12 @@
+span.folder{
+	background-image: url("../img/folder2.gif");
+	background-repeat: no-repeat;
+	font-size: 14px;
+	padding-left: 20px;
+	height: 17px;
+}
+.mainForm{
+	margin-left: 50px;
+	width: 80%;
+	border: none;
+}
